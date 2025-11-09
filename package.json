@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
-    "deploy": "ng build --base-href \"https://Kevin23221.github.io/global.turismo.git/\" && npx angular-cli-ghpages --dir=dist/global.turismo"
+    "deploy": "ng build --base-href \"https://Kevin23221.github.io/global.turismo/\" && npx angular-cli-ghpages --dir=dist/global.turismo/browser"
   },
   "prettier": {
     "printWidth": 100,
