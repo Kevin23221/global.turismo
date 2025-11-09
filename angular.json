@@ -46,7 +46,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "https://kevin23221.github.io/global.turismo.git/"
+              "baseHref": "https://Kevin23221.github.io/global.turismo.git/"
             },
             "development": {
               "optimization": false,
