@@ -1,0 +1,83 @@
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+}
+
+
+    /* Sección Quiénes Somos */
+.about-section img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 350px;
+    box-shadow: 0 4px 10px rgb(0, 0, 4);
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+.info-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #212529;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    color: white;
+}
+
+.info-section h2 {
+    color: var(--verde-principal);
+    margin-bottom: 20px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+}
+
+.card-title {
+    color: white;
+    text-align: center;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+       /* Mapa */
+    .map-section {
+    background-color: #212529;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+    .map-section h2 {
+    color: var(--verde-principal);
+    margin-bottom: 20px;
+}
+
+.map-section iframe {
+    width: 200%;
+    height: 400px;
+    border: 0;
+    border-radius: 10px;
+}

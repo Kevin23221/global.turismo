@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "ng e2e",
+    "deploy": "ng build --base-href \"https://Kevin23221.github.io/global.turismo.git/\" && npx angular-cli-ghpages --dir=dist/global.turismo"
   },
   "prettier": {
     "printWidth": 100,
@@ -32,6 +34,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^20.3.7",
     "@angular/build": "^20.3.8",
     "@angular/cli": "^20.3.8",
     "@angular/compiler-cli": "^20.3.0",

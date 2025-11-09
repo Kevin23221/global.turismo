@@ -1,0 +1,51 @@
+.section {
+    padding: 60px 0;
+    color: white;
+}
+
+.section h2 {
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.about-image {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section {
+    background-color: #212529;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.value-card {
+    background: #212529;
+    border-radius: 10px;
+    padding: 25px;      
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
