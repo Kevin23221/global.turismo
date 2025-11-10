@@ -1,10 +1,18 @@
-.carousel-inner img {
+.carousel-item img {
     height: 500px;
     object-fit: cover;
 }
-h1 {
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    color: white;
+
+.productos .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productos .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+}
+
+.productos .card-img-top {
+    height: 250px;
+    object-fit: cover;
 }
