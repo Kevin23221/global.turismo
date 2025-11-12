@@ -2,27 +2,7 @@
     height: 500px;
     object-fit: cover;
 }
-
-
-    /* Sección Quiénes Somos */
-.about-section img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    height: 350px;
-    box-shadow: 0 4px 10px rgb(0, 0, 4);
-}
-
-.about-text {
-    text-align: left;
-}
-
-.about-text p {
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-
+/* Seccion de informacion */
 .info-section {
     padding: 50px 20px;
     text-align: center;
@@ -34,10 +14,30 @@
 }
 
 .info-section h2 {
-    color: var(--verde-principal);
     margin-bottom: 20px;
 }
 
+
+/* Sección Quiénes Somos */
+.about-section img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 350px;
+    box-shadow: 0 4px 10px rgb(0, 0, 4);
+}
+
+.about-text h2{
+    text-align: center;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Seccion de destinos recomendados*/
 .card {
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@
     object-fit: cover;
 }
 
-       /* Mapa */
+/* Seccion de mapa */
     .map-section {
     background-color: #212529;
     border-radius: 8px;
@@ -71,7 +71,6 @@
 }
 
     .map-section h2 {
-    color: var(--verde-principal);
     margin-bottom: 20px;
 }
 
