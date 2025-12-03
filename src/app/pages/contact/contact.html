@@ -1,4 +1,4 @@
-<!-- FORMULARIO DE CONTACTO -->
+ <!-- FORMULARIO DE CONTACTO -->
 <section class="contact-section container">
     <h2>Contáctanos</h2>
     <p class="text-center mb-4">
@@ -6,12 +6,24 @@
         Colombia, ¡escríbenos!
         Nuestro equipo estará encantado de ayudarte.
     </p>
-    <form>
+    <form [formGroup]="contactForm" (ngSubmit)="enviar()" novalidate>
         <div class="row g-3">
+
+            <!--INPUT DE NOMBRE -->
             <div class="col-md-6">
                 <label for="nombre" class="form-label">Nombre completo</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+                <input id = "nombre" type="text" class="form-control" formControlName="nombre" 
+                placeholder="Tu nombre completo" [class.is-invalid] = "f.nombre.invalid && f.nombre.touched"/>
+                <!-- MENSAJES DE ERROR -->
+                <div class = "invalid-feedback" *ngIf = "f.nombre.invalid && f.nombre.touched">
+                    <!-- ERROR DE REQUIRED-->
+                    <div *ngIf = "f.nombre.errors?.required">El nombre es obligatorio.</div>
+                    <!-- ERROR DE MINLEGHt-->
+                    <div *ngIf = "f.nombre.errors?.minlength">Mínimo {{f.nombre.errors?.minlength.required.Lenght }} caracteres.</div >
+
+                </div>
             </div>
+
             <div class="col-md-6">
                 <label for="email" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
