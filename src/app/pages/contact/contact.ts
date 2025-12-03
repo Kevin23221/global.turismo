@@ -16,10 +16,11 @@ export class Contact {
   constructor(private fb: FormBuilder) {
     //Creamos el formulario con validaciones básicas
     this.contactForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(2)]],
+      nombre: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       asunto: ['',[Validators.required, Validators.minLength(5)]],
-      mensaje: ['',[Validators.required,Validators.minLength(10)]],
+      mensaje: ['',[Validators.required, Validators.minLength(10)]],
+      telefono: ['',[Validators.required, Validators.pattern(/^[0-9]{10}$/)]]
     });
   }
   //Devuelve los controles de forma que en plantilla podamos usar f.nombre
@@ -48,6 +49,7 @@ export class Contact {
       email: (this.f.email.value || '').trim(),
       asunto: (this.f.asunto.value || '').trim(),
       mensaje: (this.f.mensaje.value || '').trim(),
+      telefono: (this.f.telefono.value || '').trim(),
       createdAt: new Date().toISOString()
     };
 
@@ -59,6 +61,7 @@ export class Contact {
       const link = document.createElement('a');
       link.href = url;
       link.download = 'contacto.json';
+      
       //necesario en algunos navegadores
       document.body.appendChild(link);
       link.click();

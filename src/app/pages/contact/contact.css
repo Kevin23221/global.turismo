@@ -54,6 +54,7 @@
     font-size: 1.1rem;
     border: none;
     border-radius: 8px;
+    margin: 0 10px;
 }
 
 .contact-section button:hover {

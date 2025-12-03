@@ -1,4 +1,4 @@
- <!-- FORMULARIO DE CONTACTO -->
+<!-- FORMULARIO DE CONTACTO -->
 <section class="contact-section container">
     <h2>Contáctanos</h2>
     <p class="text-center mb-4">
@@ -18,31 +18,69 @@
                 <div class = "invalid-feedback" *ngIf = "f.nombre.invalid && f.nombre.touched">
                     <!-- ERROR DE REQUIRED-->
                     <div *ngIf = "f.nombre.errors?.required">El nombre es obligatorio.</div>
-                    <!-- ERROR DE MINLEGHt-->
-                    <div *ngIf = "f.nombre.errors?.minlength">Mínimo {{f.nombre.errors?.minlength.required.Lenght }} caracteres.</div >
-
+                    <!-- ERROR DE MINLENGHT-->
+                    <div *ngIf="f.nombre.errors?.minlength"> Mínimo {{ f.nombre.errors?.minlength?.requiredLength }} caracteres.</div>
                 </div>
             </div>
 
+            <!-- INPUT DE EMAIL -->
             <div class="col-md-6">
                 <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
+                <input id ="email" type ="email" class ="form-control" formControlName ="email" placeholder="ejemplo@gmail.com"
+                [class.is-invalid]="f.email.invalid && f.email.touched"/>
+                <div class="invalid-feedback" *ngIf="f.email.invalid && f.email.touched">
+                    <!-- ERROR DE REQUIRED-->
+                    <div *ngIf="f.email.errors?.required">El correo electrónico es obligatorio.</div>
+                    <!-- ERROR DE EMAIL-->
+                    <div *ngIf="f.email.errors?.email">Formato de correo invalido</div>
+                </div>
             </div>
+
+            <!-- INPUT DE TELEFONO-->
             <div class="col-md-6">
                 <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" placeholder="+57 000 000 0000">
+                <input id ="telefono" type="tel" class="form-control" formControlName = "telefono" placeholder="+57 000 000 0000"
+                [class.is-invalid]="f.telefono.invalid && f.telefono.touched"/>
+                <div class ="invalid-feedback" *ngIf="f.telefono.invalid && f.telefono.touched">
+                    <!-- ERROR DE REQUIRED-->
+                    <div *ngIf="f.telefono.errors?.required">El teléfono es obligatorio.</div>
+                    <!-- ERROR DE PATTERN-->
+                    <div *ngIf="f.telefono.errors?.pattern">Por favor ingrese unicamene numeros. Debe contener 10 dígitos.</div>
+                </div>
             </div>
+
+            <!-- INPUT DE ASUNTO-->
             <div class="col-md-6">
                 <label for="asunto" class="form-label">Asunto</label>
-                <input type="text" class="form-control" id="asunto" placeholder="Consulta o solicitud" required>
+                <input type="text" class="form-control" id="asunto" placeholder="Consulta o solicitud" formControlName = "asunto"
+                [class.is-invalid]="f.asunto.invalid && f.asunto.touched"/>
+                
+                <div class="invalid-feedback" *ngIf="f.asunto.invalid && f.asunto.errors">
+                    <!-- ERROR DE REQUIRED-->
+                    <div *ngIf="f.asunto.errors?.required">El asunto es obligatorio.</div>
+                    <!-- ERROR DE MINLENGHT-->
+                    <div *ngIf="f.asunto.errors?.minlength"> Mínimo {{ f.asunto.errors?.minlength?.requiredLength }} caracteres.</div>
+                </div>
             </div>
+            <!-- INPUT DE MENSAJE -->
             <div class="col-12">
                 <label for="mensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
-                    required></textarea>
+                <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." 
+                formControlName ="mensaje" [class.is-invalid]="f.mensaje.invalid && f.mensaje.touched"></textarea>
+                <div class ="invalid-feedback" *ngIf="f.mensaje.touched && f.mensaje.errors">
+                    <!-- ERROR DE REQUIRED-->
+                    <div *ngIf="f.mensaje.errors?.required">El mensaje es obligatorio.</div>
+                    <!-- ERROR DE MINLENGHT-->
+                    <div *ngIf="f.mensaje.errors?.minlength">Mínimo {{ f.mensaje.errors?.minlength?.requiredLength }} caracteres.</div>
+                </div>
             </div>
+            <!-- BOTONES -->
             <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-success px-5 py-2">Enviar Mensaje</button>
+                <button type="submit" class="btn btn-success px-5 py-2"
+                [disabled]="submitting">Enviar Mensaje</button>
+            <!-- BOTON DE CANCELAR -->
+                <button type ="button" class="btn btn-success px-5 py-2"
+                (click)="cancelar()" [disabled]="submitting">Cancelar</button>
             </div>
         </div>
     </form>
